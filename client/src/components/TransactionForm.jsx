@@ -28,7 +28,7 @@ const TransactionForm = () => {
         amount: parseFloat(form.amount),
       };
 
-      const res = await axios.post('/transactions', newTransaction);
+      const res = await axios.post('https://expense-visualizer-r84u.onrender.com', newTransaction);
       dispatch({ type: 'ADD', payload: res.data });
 
       // Reset form
