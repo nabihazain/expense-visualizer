@@ -18,7 +18,7 @@ const TransactionItem = ({ transaction }) => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/transactions/${transaction._id}`);
+      await axios.delete(`https://expense-visualizer-r84u.onrender.com/${transaction._id}`);
       dispatch({ type: 'DELETE', payload: transaction._id });
     } catch (error) {
       console.error('Delete failed:', error);
@@ -32,7 +32,7 @@ const TransactionItem = ({ transaction }) => {
         ...editForm,
         amount: parseFloat(editForm.amount),
       };
-      const res = await axios.put(`/transactions/${transaction._id}`, updated);
+      const res = await axios.put(`https://expense-visualizer-r84u.onrender.com/${transaction._id}`, updated);
       dispatch({ type: 'EDIT', payload: res.data });
       setShowModal(false);
     } catch (error) {
