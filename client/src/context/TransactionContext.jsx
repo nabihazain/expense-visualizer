@@ -23,7 +23,7 @@ export const TransactionProvider = ({ children }) => {
 
   // Fetch from backend on mount
   useEffect(() => {
-    axios.get('https://expense-visualizer-r84u.onrender.com')
+    axios.get('/transactions')
       .then(res => dispatch({ type: 'SET', payload: res.data }))
       .catch(err => console.error(err));
   }, []);
